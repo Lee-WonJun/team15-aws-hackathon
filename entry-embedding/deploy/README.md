@@ -11,6 +11,15 @@ AWS Bedrock Knowledge Base 배포를 위한 스크립트들
 
 ## 사용법
 
+cdk 배포를 위해 `.env` 파일을 생성하고, AWS 자격 증명을 설정합니다:
+```
+[Hackathon]
+aws_access_key_id = <YOUR_AWS_ACCESS>
+aws_secret_access_key = <YOUR_AWS_SECRET>
+
+```
+
+
 ```bash
 # 환경 설정
 cp .env.example .env

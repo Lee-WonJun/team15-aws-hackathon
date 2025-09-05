@@ -39,19 +39,6 @@ if ! command -v cdk &> /dev/null; then
     npm install -g aws-cdk
 fi
 
-# 임시 AWS 자격증명 파일 생성
-mkdir -p ~/.aws
-cat > ~/.aws/credentials << EOF
-[default]
-aws_access_key_id = $AWS_ACCESS_KEY_ID
-aws_secret_access_key = $AWS_SECRET_ACCESS_KEY
-EOF
-
-cat > ~/.aws/config << EOF
-[default]
-region = $AWS_REGION
-EOF
-
 # CDK 부트스트랩 (최초 1회만)
 echo "CDK 부트스트랩 실행..."
 cdk bootstrap aws://$AWS_ACCOUNT_ID/$AWS_REGION
