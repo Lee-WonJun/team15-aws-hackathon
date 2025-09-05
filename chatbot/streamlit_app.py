@@ -50,7 +50,7 @@ with st.sidebar:
         st.rerun()
     
     st.markdown("---")
-    st.markdown("**모델**: Claude Sonnet 4 🚀")
+    st.markdown("**모델**: Claude Sonnet 3.5 🚀")
     st.markdown("**Knowledge Base**: 9R38KN62YH")
     st.markdown("**기능**: RAG (검색 증강 생성)")
     st.markdown("**제공**: Amazon Bedrock")
