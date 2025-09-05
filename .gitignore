@@ -55,3 +55,7 @@ temp/
 
 # Q CLI
 .serena/
+
+
+# EntryJs
+.entryjs/

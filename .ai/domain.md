@@ -10,6 +10,9 @@
 - **MCP (Model Context Protocol)**: AI 모델과 외부 시스템 간의 컨텍스트 공유 프로토콜
 - **RAG (Retrieval-Augmented Generation)**: 검색 증강 생성 기술
 
+## 참고 폴더
+- `.entryjs/` 는 실제 entry stdio 에서 사용하는 JS 코드이므로, 엔트리 구현을 확인해야 할 경우 해당 폴더를 참고
+
 ## AI 서비스 컴포넌트
 - **AI Wrapper**: Entry Python을 위한 AI 기능 래퍼
 - **AI Helper**: 학습 보조 AI 도구
