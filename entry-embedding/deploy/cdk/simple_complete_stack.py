@@ -17,7 +17,7 @@ class SimpleCompleteStack(Stack):
         # S3 버킷
         source_bucket = s3.Bucket(
             self, "EntryDocsSourceBucket",
-            bucket_name=f"entry-python-docs-simple-{self.account}-{self.region}",
+            bucket_name=f"entry-python-docs-simple-v2-{self.account}-{self.region}",
             removal_policy=RemovalPolicy.DESTROY,
             auto_delete_objects=True
         )

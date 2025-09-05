@@ -33,10 +33,9 @@ def list_all_apis() -> str:
     for doc in docs:
         if doc.get("type") == "block_reference":
             apis.append({
-                "block_id": doc["block_id"],
-                "category": doc["category"],
-                "python_syntax": doc["python_syntax"],
-                "parameters": doc.get("parameters", [])
+                "id": doc["id"],
+                "title": doc["title"],
+                "content": doc["content"]
             })
     
     result = {
@@ -53,7 +52,7 @@ def list_categories() -> str:
     categories = set()
     
     for doc in docs:
-        if "category" in doc:
+        if doc.get("type") == "category_guide":
             categories.add(doc["category"])
     
     return json.dumps(sorted(list(categories)), ensure_ascii=False, indent=2)
@@ -62,17 +61,17 @@ def list_categories() -> str:
 def list_blocks_by_category(category: str) -> str:
     """특정 카테고리의 블록 목록을 반환합니다"""
     docs = load_entry_docs()
-    blocks = []
     
     for doc in docs:
-        if doc.get("category") == category and doc.get("type") == "block_reference":
-            blocks.append({
-                "block_id": doc["block_id"],
-                "python_syntax": doc["python_syntax"],
-                "parameters": doc.get("parameters", [])
-            })
+        if doc.get("category") == category and doc.get("type") == "category_guide":
+            return json.dumps({
+                "id": doc["id"],
+                "title": doc["title"],
+                "content": doc["content"],
+                "category": doc["category"]
+            }, ensure_ascii=False, indent=2)
     
-    return json.dumps(blocks, ensure_ascii=False, indent=2)
+    return json.dumps([], ensure_ascii=False, indent=2)
 
 @mcp.tool()
 def get_block_details(block_id: str) -> str:
@@ -80,7 +79,7 @@ def get_block_details(block_id: str) -> str:
     docs = load_entry_docs()
     
     for doc in docs:
-        if doc.get("block_id") == block_id and doc.get("type") == "block_reference":
+        if doc.get("id") == block_id:
             return json.dumps(doc, ensure_ascii=False, indent=2)
     
     return f"블록 '{block_id}'를 찾을 수 없습니다."
@@ -92,15 +91,13 @@ def search_python_syntax(syntax: str) -> str:
     matches = []
     
     for doc in docs:
-        if doc.get("type") == "block_reference":
-            for py_syntax in doc.get("python_syntax", []):
-                if syntax.lower() in py_syntax.lower():
-                    matches.append({
-                        "block_id": doc["block_id"],
-                        "category": doc["category"],
-                        "python_syntax": py_syntax,
-                        "parameters": doc.get("parameters", [])
-                    })
+        if syntax.lower() in doc.get("content", "").lower():
+            matches.append({
+                "id": doc["id"],
+                "title": doc["title"],
+                "type": doc["type"],
+                "content": doc["content"]
+            })
     
     return json.dumps(matches, ensure_ascii=False, indent=2)
 

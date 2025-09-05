@@ -200,7 +200,7 @@ def handler(event, context):
                 "DataSourceId": data_source.attr_data_source_id
             }
         )
-        sync_cr.node.add_dependency(data_source)
+        # sync_cr.node.add_dependency(data_source)  # Comment out problematic dependency
 
         # 출력
         CfnOutput(self, "KnowledgeBaseId", value=knowledge_base.attr_knowledge_base_id)
