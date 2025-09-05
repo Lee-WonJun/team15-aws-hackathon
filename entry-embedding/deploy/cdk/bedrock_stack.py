@@ -56,7 +56,7 @@ class BedrockStack(Stack):
         # Knowledge Base 생성
         knowledge_base = bedrock.CfnKnowledgeBase(
             self, "EntryPythonKnowledgeBase",
-            name="entry-python-knowledge-base",
+            name="entry-python-knowledge-base-v2",
             role_arn=bedrock_role.role_arn,
             knowledge_base_configuration=bedrock.CfnKnowledgeBase.KnowledgeBaseConfigurationProperty(
                 type="VECTOR",

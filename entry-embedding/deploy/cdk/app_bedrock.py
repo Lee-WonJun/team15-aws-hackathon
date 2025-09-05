@@ -7,7 +7,7 @@ from bedrock_stack import BedrockStack
 load_dotenv()
 
 app = cdk.App()
-BedrockStack(app, "BedrockStack",
+BedrockStack(app, "BedrockStack-v2",
     env=cdk.Environment(
         account=os.getenv("AWS_ACCOUNT_ID"),
         region=os.getenv("AWS_REGION", "us-east-1")

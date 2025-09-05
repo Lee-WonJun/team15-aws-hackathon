@@ -8,10 +8,8 @@ import os
 from typing import List, Dict, Any
 from fastmcp import FastMCP
 
-# 프로젝트 루트 경로 (현재 스크립트 기준 상대 경로)
-SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
-PROJECT_ROOT = os.path.dirname(SCRIPT_DIR)
-DOCS_PATH = os.path.join(PROJECT_ROOT, "entry-embedding", "entry_python_rag_docs.json")
+# 문서 파일 경로
+DOCS_PATH = os.path.join(os.path.dirname(__file__), "entry_python_rag_docs.json")
 
 # FastMCP 서버 생성
 mcp = FastMCP("Entry Python API")
