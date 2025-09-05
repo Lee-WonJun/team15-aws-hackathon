@@ -1,30 +1,15 @@
-# Deploy Scripts
+# Entry Python RAG 배포
 
-AWS Bedrock Knowledge Base 배포를 위한 스크립트들
+## 필수 파일
+- `.env` - AWS 자격증명
+- `docs/` - 마크다운 문서들
+- `cdk/` - CDK 스택 정의
 
-## 파일 설명
-
-- `deploy.sh`: 메인 배포 스크립트
-- `.env`: AWS 계정 정보 (git에서 제외됨)
-- `cdk/`: CDK 인프라 코드
-- `scripts/`: 문서 처리 스크립트
-
-## 사용법
-
-cdk 배포를 위해 `.env` 파일을 생성하고, AWS 자격 증명을 설정합니다:
-```
-[Hackathon]
-aws_access_key_id = <YOUR_AWS_ACCESS>
-aws_secret_access_key = <YOUR_AWS_SECRET>
-
-```
-
-
+## 배포 방법
 ```bash
-# 환경 설정
-cp .env.example .env
-# .env 편집
-
-# 배포
-./deploy.sh
+./deploy_final.sh
 ```
+
+## 구성 요소
+1. **SimpleCompleteStack**: S3 + OpenSearch Serverless
+2. **BedrockStack**: Knowledge Base + 자동 동기화
