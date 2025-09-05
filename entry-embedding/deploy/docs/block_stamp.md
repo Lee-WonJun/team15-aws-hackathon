@@ -1,13 +1,13 @@
 ---
-id: block_show
-title: show 블록
+id: block_stamp
+title: stamp 블록
 type: block_reference
 ---
 
-# show 블록
+# stamp 블록
 
 **Python 문법:**
 ```python
-Entry.show()
+Entry.stamp()
 ```
 

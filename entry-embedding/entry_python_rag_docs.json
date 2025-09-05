@@ -1,174 +1,714 @@
 [
   {
-    "id": "category_boolean_input",
-    "title": "엔트리 파이썬 - boolean_input 카테고리",
-    "content": "# boolean_input 카테고리 블록들\n\n## is_clicked\n**Python 문법:** `Entry.is_mouse_clicked()`\n\n**사용 예시:**\n```python\nEntry.is_mouse_clicked()\n```\n\n## is_press_some_key\n**Python 문법:** `Entry.is_key_pressed(%1)`\n\n**매개변수:**\n- VALUE: 위치 0\n\n**사용 예시:**\n```python\nEntry.is_key_pressed(%1)\n```\n\n",
+    "id": "category_judgement",
+    "title": "엔트리 파이썬 - judgement 카테고리",
+    "content": "# judgement 카테고리 블록들\n\n## is_mouse_clicked\n**Python 문법:** `Entry.is_mouse_clicked()`\n\n## is_key_pressed\n**Python 문법:** `Entry.is_key_pressed(%1)`\n\n## is_touched\n**Python 문법:** `Entry.is_touched(%2)`\n\n## is_boost_mode\n**Python 문법:** `Entry.is_boost_mode()`\n\n## is_current_device_type\n**Python 문법:** `Entry.is_current_device_type(%1)`\n\n## is_touch_supported\n**Python 문법:** `Entry.is_touch_supported()`\n\n",
     "type": "category_guide",
-    "category": "boolean_input",
-    "blocks": [
-      {
-        "block_id": "is_clicked",
-        "category": "boolean_input",
-        "python_syntax": [
-          "Entry.is_mouse_clicked()"
-        ],
-        "parameters": [],
-        "file": "block_judgement.js"
-      },
-      {
-        "block_id": "is_press_some_key",
-        "category": "boolean_input",
-        "python_syntax": [
-          "Entry.is_key_pressed(%1)"
-        ],
-        "parameters": [
-          {
-            "name": "VALUE",
-            "index": 0
-          }
-        ],
-        "file": "block_judgement.js"
-      }
-    ]
+    "category": "judgement"
   },
   {
-    "id": "category_visibility",
-    "title": "엔트리 파이썬 - visibility 카테고리",
-    "content": "# visibility 카테고리 블록들\n\n## show\n**Python 문법:** `Entry.show()`\n\n**사용 예시:**\n```python\nEntry.show()\n```\n\n## hide\n**Python 문법:** `Entry.hide()`\n\n**사용 예시:**\n```python\nEntry.hide()\n```\n\n",
+    "id": "category_moving",
+    "title": "엔트리 파이썬 - moving 카테고리",
+    "content": "# moving 카테고리 블록들\n\n## move_to_direction\n**Python 문법:** `Entry.move_to_direction(%1)`\n\n## bounce_on_edge\n**Python 문법:** `Entry.bounce_on_edge()`\n\n## add_x\n**Python 문법:** `Entry.add_x(%1)`\n\n## add_y\n**Python 문법:** `Entry.add_y(%1)`\n\n## add_xy_for_sec(%2, %3, %1)\n**Python 문법:** `Entry.add_xy_for_sec(%2, %3, %1)`\n\n## set_x\n**Python 문법:** `Entry.set_x(%1)`\n\n## set_y\n**Python 문법:** `Entry.set_y(%1)`\n\n## set_xy(%1, %2)\n**Python 문법:** `Entry.set_xy(%1, %2)`\n\n## set_xy_for_sec(%2, %3, %1)\n**Python 문법:** `Entry.set_xy_for_sec(%2, %3, %1)`\n\n## move_to\n**Python 문법:** `Entry.move_to(%1)`\n\n## move_to_for_sec(%2, %1)\n**Python 문법:** `Entry.move_to_for_sec(%2, %1)`\n\n## add_rotation\n**Python 문법:** `Entry.add_rotation(%1)`\n\n## add_direction\n**Python 문법:** `Entry.add_direction(%1)`\n\n## add_rotation_for_sec(%2, %1)\n**Python 문법:** `Entry.add_rotation_for_sec(%2, %1)`\n\n## add_direction_for_sec(%2, %1)\n**Python 문법:** `Entry.add_direction_for_sec(%2, %1)`\n\n## set_rotation\n**Python 문법:** `Entry.set_rotation(%1)`\n\n## set_direction\n**Python 문법:** `Entry.set_direction(%1)`\n\n## look_at\n**Python 문법:** `Entry.look_at(%1)`\n\n## move_to_degree(%2, %1)\n**Python 문법:** `Entry.move_to_degree(%2, %1)`\n\n",
     "type": "category_guide",
-    "category": "visibility",
-    "blocks": [
-      {
-        "block_id": "show",
-        "category": "visibility",
-        "python_syntax": [
-          "Entry.show()"
-        ],
-        "parameters": [],
-        "file": "block_looks.js"
-      },
-      {
-        "block_id": "hide",
-        "category": "visibility",
-        "python_syntax": [
-          "Entry.hide()"
-        ],
-        "parameters": [],
-        "file": "block_looks.js"
-      }
-    ]
+    "category": "moving"
   },
   {
-    "id": "category_weather_legacy",
-    "title": "엔트리 파이썬 - weather_legacy 카테고리",
-    "content": "# weather_legacy 카테고리 블록들\n\n## check_weather\n**Python 문법:** `Legacy.Weather.is_condition_sunny(%1, %2)`\n\n**매개변수:**\n- DATE: 위치 0\n- LOCATION: 위치 1\n\n**사용 예시:**\n```python\nLegacy.Weather.is_condition_sunny(%1, %2)\n```\n\n",
+    "id": "category_start",
+    "title": "엔트리 파이썬 - start 카테고리",
+    "content": "# start 카테고리 블록들\n\n## send_signal\n**Python 문법:** `Entry.send_signal(%1)`\n\n## send_signal_wait\n**Python 문법:** `Entry.send_signal_wait(%1)`\n\n## start_scene\n**Python 문법:** `Entry.start_scene(%1)`\n\n## start_scene_of\n**Python 문법:** `Entry.start_scene_of(%1)`\n\n",
     "type": "category_guide",
-    "category": "weather_legacy",
-    "blocks": [
-      {
-        "block_id": "check_weather",
-        "category": "weather_legacy",
-        "python_syntax": [
-          "Legacy.Weather.is_condition_sunny(%1, %2)"
-        ],
-        "parameters": [
-          {
-            "name": "DATE",
-            "index": 0
-          },
-          {
-            "name": "LOCATION",
-            "index": 1
-          }
-        ],
-        "file": "block_expansion_weather.js"
-      }
-    ]
+    "category": "start"
   },
   {
-    "id": "block_is_clicked",
-    "title": "엔트리 파이썬 블록: is_clicked",
-    "content": "# is_clicked 블록\n\n**카테고리:** boolean_input\n\n**Python 문법:**\n```python\nEntry.is_mouse_clicked()\n```\n\n## 사용 예시\n\n```python\nif Entry.is_mouse_clicked():\n    Entry.print('조건이 참입니다')\n```\n\n## 관련 정보\n\n- 이 블록은 boolean_input 카테고리에 속합니다\n- 원본 파일: block_judgement.js\n",
-    "type": "block_reference",
-    "block_id": "is_clicked",
-    "category": "boolean_input",
-    "python_syntax": [
-      "Entry.is_mouse_clicked()"
-    ],
-    "parameters": []
+    "id": "category_calc",
+    "title": "엔트리 파이썬 - calc 카테고리",
+    "content": "# calc 카테고리 블록들\n\n## value_of_mouse_pointer\n**Python 문법:** `Entry.value_of_mouse_pointer(%2)`\n\n## value_of_object(%2, %4)\n**Python 문법:** `Entry.value_of_object(%2, %4)`\n\n## value_of_timer\n**Python 문법:** `Entry.value_of_timer()`\n\n## timer\n**Python 문법:** `Entry.timer(%2)`\n\n## timer(\n**Python 문법:** `Entry.timer(`\n\n## timer_view\n**Python 문법:** `Entry.timer_view(%2)`\n\n## timer_view(\n**Python 문법:** `Entry.timer_view(`\n\n## value_of_current_time\n**Python 문법:** `Entry.value_of_current_time(%2)`\n\n## value_of_distance_to\n**Python 문법:** `Entry.value_of_distance_to(%2)`\n\n## value_of_username\n**Python 문법:** `Entry.value_of_username()`\n\n## value_of_nickname\n**Python 문법:** `Entry.value_of_nickname()`\n\n## get_block_count\n**Python 문법:** `Entry.get_block_count(%1)`\n\n## value_of_username\n**Python 문법:** `Entry.value_of_username()`\n\n",
+    "type": "category_guide",
+    "category": "calc"
   },
   {
-    "id": "block_is_press_some_key",
-    "title": "엔트리 파이썬 블록: is_press_some_key",
-    "content": "# is_press_some_key 블록\n\n**카테고리:** boolean_input\n\n**Python 문법:**\n```python\nEntry.is_key_pressed(%1)\n```\n\n## 매개변수\n\n- **VALUE** (위치 0): 블록의 1번째 입력값\n\n## 사용 예시\n\n```python\nif Entry.is_key_pressed(%1):\n    Entry.print('조건이 참입니다')\n```\n\n## 관련 정보\n\n- 이 블록은 boolean_input 카테고리에 속합니다\n- 원본 파일: block_judgement.js\n",
-    "type": "block_reference",
-    "block_id": "is_press_some_key",
-    "category": "boolean_input",
-    "python_syntax": [
-      "Entry.is_key_pressed(%1)"
-    ],
-    "parameters": [
-      {
-        "name": "VALUE",
-        "index": 0
-      }
-    ]
+    "id": "category_variable",
+    "title": "엔트리 파이썬 - variable 카테고리",
+    "content": "# variable 카테고리 블록들\n\n## input\n**Python 문법:** `Entry.input(%1)`\n\n## answer\n**Python 문법:** `Entry.answer()`\n\n## answer\n**Python 문법:** `Entry.answer()`\n\n## answer_view\n**Python 문법:** `Entry.answer_view(%1)`\n\n## show_variable\n**Python 문법:** `Entry.show_variable(%1)`\n\n## hide_variable\n**Python 문법:** `Entry.hide_variable(%1)`\n\n## show_list\n**Python 문법:** `Entry.show_list(%1)`\n\n## hide_list\n**Python 문법:** `Entry.hide_list(%1)`\n\n",
+    "type": "category_guide",
+    "category": "variable"
+  },
+  {
+    "id": "category_sound",
+    "title": "엔트리 파이썬 - sound 카테고리",
+    "content": "# sound 카테고리 블록들\n\n## play_sound\n**Python 문법:** `Entry.play_sound(%1)`\n\n## play_sound_for_sec(%1, %2)\n**Python 문법:** `Entry.play_sound_for_sec(%1, %2)`\n\n## play_sound_from_to(%1, %2, %3)\n**Python 문법:** `Entry.play_sound_from_to(%1, %2, %3)`\n\n## play_sound_and_wait\n**Python 문법:** `Entry.play_sound_and_wait(%1)`\n\n## play_sound_for_sec_and_wait(%1, %2)\n**Python 문법:** `Entry.play_sound_for_sec_and_wait(%1, %2)`\n\n## play_sound_from_to_and_wait(%1, %2, %3)\n**Python 문법:** `Entry.play_sound_from_to_and_wait(%1, %2, %3)`\n\n## add_sound_volume\n**Python 문법:** `Entry.add_sound_volume(%1)`\n\n## set_sound_volume\n**Python 문법:** `Entry.set_sound_volume(%1)`\n\n## stop_sound\n**Python 문법:** `Entry.stop_sound()`\n\n## stop_sound\n**Python 문법:** `Entry.stop_sound()`\n\n## stop_sound\n**Python 문법:** `Entry.stop_sound()`\n\n## stop_sound\n**Python 문법:** `Entry.stop_sound()`\n\n## stop_sound\n**Python 문법:** `Entry.stop_sound()`\n\n## stop_sound\n**Python 문법:** `Entry.stop_sound()`\n\n## value_of_sound_volume\n**Python 문법:** `Entry.value_of_sound_volume()`\n\n## value_of_sound_length_of\n**Python 문법:** `Entry.value_of_sound_length_of(%2)`\n\n",
+    "type": "category_guide",
+    "category": "sound"
+  },
+  {
+    "id": "category_flow",
+    "title": "엔트리 파이썬 - flow 카테고리",
+    "content": "# flow 카테고리 블록들\n\n## wait_for_sec\n**Python 문법:** `Entry.wait_for_sec(%1)`\n\n## wait_until\n**Python 문법:** `Entry.wait_until(%1)`\n\n## stop_code\n**Python 문법:** `Entry.stop_code(%1)`\n\n## start_again\n**Python 문법:** `Entry.start_again()`\n\n## make_clone_of\n**Python 문법:** `Entry.make_clone_of(%1)`\n\n## remove_this_clone\n**Python 문법:** `Entry.remove_this_clone()`\n\n## remove_all_clone\n**Python 문법:** `Entry.remove_all_clone()`\n\n",
+    "type": "category_guide",
+    "category": "flow"
+  },
+  {
+    "id": "category_looks",
+    "title": "엔트리 파이썬 - looks 카테고리",
+    "content": "# looks 카테고리 블록들\n\n## show\n**Python 문법:** `Entry.show()`\n\n## hide\n**Python 문법:** `Entry.hide()`\n\n## print_for_sec(%1, %2)\n**Python 문법:** `Entry.print_for_sec(%1, %2)`\n\n## print\n**Python 문법:** `Entry.print(%1)`\n\n## clear_print\n**Python 문법:** `Entry.clear_print()`\n\n## change_shape\n**Python 문법:** `Entry.change_shape(%1)`\n\n## change_shape_to\n**Python 문법:** `Entry.change_shape_to(%1)`\n\n## add_effect(%1, %2)\n**Python 문법:** `Entry.add_effect(%1, %2)`\n\n## set_effect(%1, %2)\n**Python 문법:** `Entry.set_effect(%1, %2)`\n\n## clear_effect\n**Python 문법:** `Entry.clear_effect()`\n\n## add_size\n**Python 문법:** `Entry.add_size(%1)`\n\n## set_size\n**Python 문법:** `Entry.set_size(%1)`\n\n## flip_horizontal\n**Python 문법:** `Entry.flip_horizontal()`\n\n## flip_vertical\n**Python 문법:** `Entry.flip_vertical()`\n\n## send_layer_to\n**Python 문법:** `Entry.send_layer_to(%1)`\n\n",
+    "type": "category_guide",
+    "category": "looks"
+  },
+  {
+    "id": "category_text",
+    "title": "엔트리 파이썬 - text 카테고리",
+    "content": "# text 카테고리 블록들\n\n## contents_of_textbox\n**Python 문법:** `Entry.contents_of_textbox(%1)`\n\n## write_text\n**Python 문법:** `Entry.write_text(%1)`\n\n## append_text\n**Python 문법:** `Entry.append_text(%1)`\n\n## prepend_text\n**Python 문법:** `Entry.prepend_text(%1)`\n\n## changeTextEffect(\"%1\", \"%2\")\n**Python 문법:** `Entry.changeTextEffect(\"%1\", \"%2\")`\n\n## text_change_font(\"%1\")\n**Python 문법:** `Entry.text_change_font(\"%1\")`\n\n## text_change_font_color(\"%1\")\n**Python 문법:** `Entry.text_change_font_color(\"%1\")`\n\n## text_change_bg_color(\"%1\")\n**Python 문법:** `Entry.text_change_bg_color(\"%1\")`\n\n## clear_text\n**Python 문법:** `Entry.clear_text()`\n\n",
+    "type": "category_guide",
+    "category": "text"
+  },
+  {
+    "id": "category_brush",
+    "title": "엔트리 파이썬 - brush 카테고리",
+    "content": "# brush 카테고리 블록들\n\n## stamp\n**Python 문법:** `Entry.stamp()`\n\n## start_drawing\n**Python 문법:** `Entry.start_drawing()`\n\n## stop_drawing\n**Python 문법:** `Entry.stop_drawing()`\n\n## set_brush_color_to\n**Python 문법:** `Entry.set_brush_color_to(%1)`\n\n## set_brush_color_to_random\n**Python 문법:** `Entry.set_brush_color_to_random()`\n\n## add_brush_size\n**Python 문법:** `Entry.add_brush_size(%1)`\n\n## set_brush_size\n**Python 문법:** `Entry.set_brush_size(%1)`\n\n## add_brush_transparency\n**Python 문법:** `Entry.add_brush_transparency(%1)`\n\n## set_brush_transparency\n**Python 문법:** `Entry.set_brush_transparency(%1)`\n\n## clear_drawing\n**Python 문법:** `Entry.clear_drawing()`\n\n",
+    "type": "category_guide",
+    "category": "brush"
+  },
+  {
+    "id": "block_is_mouse_clicked",
+    "title": "is_mouse_clicked 블록",
+    "content": "# is_mouse_clicked 블록\n\n**Python 문법:**\n```python\nEntry.is_mouse_clicked()\n```\n\n",
+    "type": "block_reference"
+  },
+  {
+    "id": "block_is_key_pressed",
+    "title": "is_key_pressed 블록",
+    "content": "# is_key_pressed 블록\n\n**Python 문법:**\n```python\nEntry.is_key_pressed(%1)\n```\n\n",
+    "type": "block_reference"
+  },
+  {
+    "id": "block_is_touched",
+    "title": "is_touched 블록",
+    "content": "# is_touched 블록\n\n**Python 문법:**\n```python\nEntry.is_touched(%2)\n```\n\n",
+    "type": "block_reference"
+  },
+  {
+    "id": "block_is_boost_mode",
+    "title": "is_boost_mode 블록",
+    "content": "# is_boost_mode 블록\n\n**Python 문법:**\n```python\nEntry.is_boost_mode()\n```\n\n",
+    "type": "block_reference"
+  },
+  {
+    "id": "block_is_current_device_type",
+    "title": "is_current_device_type 블록",
+    "content": "# is_current_device_type 블록\n\n**Python 문법:**\n```python\nEntry.is_current_device_type(%1)\n```\n\n",
+    "type": "block_reference"
+  },
+  {
+    "id": "block_is_touch_supported",
+    "title": "is_touch_supported 블록",
+    "content": "# is_touch_supported 블록\n\n**Python 문법:**\n```python\nEntry.is_touch_supported()\n```\n\n",
+    "type": "block_reference"
+  },
+  {
+    "id": "block_move_to_direction",
+    "title": "move_to_direction 블록",
+    "content": "# move_to_direction 블록\n\n**Python 문법:**\n```python\nEntry.move_to_direction(%1)\n```\n\n",
+    "type": "block_reference"
+  },
+  {
+    "id": "block_bounce_on_edge",
+    "title": "bounce_on_edge 블록",
+    "content": "# bounce_on_edge 블록\n\n**Python 문법:**\n```python\nEntry.bounce_on_edge()\n```\n\n",
+    "type": "block_reference"
+  },
+  {
+    "id": "block_add_x",
+    "title": "add_x 블록",
+    "content": "# add_x 블록\n\n**Python 문법:**\n```python\nEntry.add_x(%1)\n```\n\n",
+    "type": "block_reference"
+  },
+  {
+    "id": "block_add_y",
+    "title": "add_y 블록",
+    "content": "# add_y 블록\n\n**Python 문법:**\n```python\nEntry.add_y(%1)\n```\n\n",
+    "type": "block_reference"
+  },
+  {
+    "id": "block_add_xy_for_sec(%2, %3, %1)",
+    "title": "add_xy_for_sec(%2, %3, %1) 블록",
+    "content": "# add_xy_for_sec(%2, %3, %1) 블록\n\n**Python 문법:**\n```python\nEntry.add_xy_for_sec(%2, %3, %1)\n```\n\n",
+    "type": "block_reference"
+  },
+  {
+    "id": "block_set_x",
+    "title": "set_x 블록",
+    "content": "# set_x 블록\n\n**Python 문법:**\n```python\nEntry.set_x(%1)\n```\n\n",
+    "type": "block_reference"
+  },
+  {
+    "id": "block_set_y",
+    "title": "set_y 블록",
+    "content": "# set_y 블록\n\n**Python 문법:**\n```python\nEntry.set_y(%1)\n```\n\n",
+    "type": "block_reference"
+  },
+  {
+    "id": "block_set_xy(%1, %2)",
+    "title": "set_xy(%1, %2) 블록",
+    "content": "# set_xy(%1, %2) 블록\n\n**Python 문법:**\n```python\nEntry.set_xy(%1, %2)\n```\n\n",
+    "type": "block_reference"
+  },
+  {
+    "id": "block_set_xy_for_sec(%2, %3, %1)",
+    "title": "set_xy_for_sec(%2, %3, %1) 블록",
+    "content": "# set_xy_for_sec(%2, %3, %1) 블록\n\n**Python 문법:**\n```python\nEntry.set_xy_for_sec(%2, %3, %1)\n```\n\n",
+    "type": "block_reference"
+  },
+  {
+    "id": "block_move_to",
+    "title": "move_to 블록",
+    "content": "# move_to 블록\n\n**Python 문법:**\n```python\nEntry.move_to(%1)\n```\n\n",
+    "type": "block_reference"
+  },
+  {
+    "id": "block_move_to_for_sec(%2, %1)",
+    "title": "move_to_for_sec(%2, %1) 블록",
+    "content": "# move_to_for_sec(%2, %1) 블록\n\n**Python 문법:**\n```python\nEntry.move_to_for_sec(%2, %1)\n```\n\n",
+    "type": "block_reference"
+  },
+  {
+    "id": "block_add_rotation",
+    "title": "add_rotation 블록",
+    "content": "# add_rotation 블록\n\n**Python 문법:**\n```python\nEntry.add_rotation(%1)\n```\n\n",
+    "type": "block_reference"
+  },
+  {
+    "id": "block_add_direction",
+    "title": "add_direction 블록",
+    "content": "# add_direction 블록\n\n**Python 문법:**\n```python\nEntry.add_direction(%1)\n```\n\n",
+    "type": "block_reference"
+  },
+  {
+    "id": "block_add_rotation_for_sec(%2, %1)",
+    "title": "add_rotation_for_sec(%2, %1) 블록",
+    "content": "# add_rotation_for_sec(%2, %1) 블록\n\n**Python 문법:**\n```python\nEntry.add_rotation_for_sec(%2, %1)\n```\n\n",
+    "type": "block_reference"
+  },
+  {
+    "id": "block_add_direction_for_sec(%2, %1)",
+    "title": "add_direction_for_sec(%2, %1) 블록",
+    "content": "# add_direction_for_sec(%2, %1) 블록\n\n**Python 문법:**\n```python\nEntry.add_direction_for_sec(%2, %1)\n```\n\n",
+    "type": "block_reference"
+  },
+  {
+    "id": "block_set_rotation",
+    "title": "set_rotation 블록",
+    "content": "# set_rotation 블록\n\n**Python 문법:**\n```python\nEntry.set_rotation(%1)\n```\n\n",
+    "type": "block_reference"
+  },
+  {
+    "id": "block_set_direction",
+    "title": "set_direction 블록",
+    "content": "# set_direction 블록\n\n**Python 문법:**\n```python\nEntry.set_direction(%1)\n```\n\n",
+    "type": "block_reference"
+  },
+  {
+    "id": "block_look_at",
+    "title": "look_at 블록",
+    "content": "# look_at 블록\n\n**Python 문법:**\n```python\nEntry.look_at(%1)\n```\n\n",
+    "type": "block_reference"
+  },
+  {
+    "id": "block_move_to_degree(%2, %1)",
+    "title": "move_to_degree(%2, %1) 블록",
+    "content": "# move_to_degree(%2, %1) 블록\n\n**Python 문법:**\n```python\nEntry.move_to_degree(%2, %1)\n```\n\n",
+    "type": "block_reference"
+  },
+  {
+    "id": "block_send_signal",
+    "title": "send_signal 블록",
+    "content": "# send_signal 블록\n\n**Python 문법:**\n```python\nEntry.send_signal(%1)\n```\n\n",
+    "type": "block_reference"
+  },
+  {
+    "id": "block_send_signal_wait",
+    "title": "send_signal_wait 블록",
+    "content": "# send_signal_wait 블록\n\n**Python 문법:**\n```python\nEntry.send_signal_wait(%1)\n```\n\n",
+    "type": "block_reference"
+  },
+  {
+    "id": "block_start_scene",
+    "title": "start_scene 블록",
+    "content": "# start_scene 블록\n\n**Python 문법:**\n```python\nEntry.start_scene(%1)\n```\n\n",
+    "type": "block_reference"
+  },
+  {
+    "id": "block_start_scene_of",
+    "title": "start_scene_of 블록",
+    "content": "# start_scene_of 블록\n\n**Python 문법:**\n```python\nEntry.start_scene_of(%1)\n```\n\n",
+    "type": "block_reference"
+  },
+  {
+    "id": "block_value_of_mouse_pointer",
+    "title": "value_of_mouse_pointer 블록",
+    "content": "# value_of_mouse_pointer 블록\n\n**Python 문법:**\n```python\nEntry.value_of_mouse_pointer(%2)\n```\n\n",
+    "type": "block_reference"
+  },
+  {
+    "id": "block_value_of_object(%2, %4)",
+    "title": "value_of_object(%2, %4) 블록",
+    "content": "# value_of_object(%2, %4) 블록\n\n**Python 문법:**\n```python\nEntry.value_of_object(%2, %4)\n```\n\n",
+    "type": "block_reference"
+  },
+  {
+    "id": "block_value_of_timer",
+    "title": "value_of_timer 블록",
+    "content": "# value_of_timer 블록\n\n**Python 문법:**\n```python\nEntry.value_of_timer()\n```\n\n",
+    "type": "block_reference"
+  },
+  {
+    "id": "block_timer",
+    "title": "timer 블록",
+    "content": "# timer 블록\n\n**Python 문법:**\n```python\nEntry.timer(%2)\n```\n\n",
+    "type": "block_reference"
+  },
+  {
+    "id": "block_timer(",
+    "title": "timer( 블록",
+    "content": "# timer( 블록\n\n**Python 문법:**\n```python\nEntry.timer(\n```\n\n",
+    "type": "block_reference"
+  },
+  {
+    "id": "block_timer_view",
+    "title": "timer_view 블록",
+    "content": "# timer_view 블록\n\n**Python 문법:**\n```python\nEntry.timer_view(%2)\n```\n\n",
+    "type": "block_reference"
+  },
+  {
+    "id": "block_timer_view(",
+    "title": "timer_view( 블록",
+    "content": "# timer_view( 블록\n\n**Python 문법:**\n```python\nEntry.timer_view(\n```\n\n",
+    "type": "block_reference"
+  },
+  {
+    "id": "block_value_of_current_time",
+    "title": "value_of_current_time 블록",
+    "content": "# value_of_current_time 블록\n\n**Python 문법:**\n```python\nEntry.value_of_current_time(%2)\n```\n\n",
+    "type": "block_reference"
+  },
+  {
+    "id": "block_value_of_distance_to",
+    "title": "value_of_distance_to 블록",
+    "content": "# value_of_distance_to 블록\n\n**Python 문법:**\n```python\nEntry.value_of_distance_to(%2)\n```\n\n",
+    "type": "block_reference"
+  },
+  {
+    "id": "block_value_of_username",
+    "title": "value_of_username 블록",
+    "content": "# value_of_username 블록\n\n**Python 문법:**\n```python\nEntry.value_of_username()\n```\n\n",
+    "type": "block_reference"
+  },
+  {
+    "id": "block_value_of_nickname",
+    "title": "value_of_nickname 블록",
+    "content": "# value_of_nickname 블록\n\n**Python 문법:**\n```python\nEntry.value_of_nickname()\n```\n\n",
+    "type": "block_reference"
+  },
+  {
+    "id": "block_get_block_count",
+    "title": "get_block_count 블록",
+    "content": "# get_block_count 블록\n\n**Python 문법:**\n```python\nEntry.get_block_count(%1)\n```\n\n",
+    "type": "block_reference"
+  },
+  {
+    "id": "block_value_of_username",
+    "title": "value_of_username 블록",
+    "content": "# value_of_username 블록\n\n**Python 문법:**\n```python\nEntry.value_of_username()\n```\n\n",
+    "type": "block_reference"
+  },
+  {
+    "id": "block_input",
+    "title": "input 블록",
+    "content": "# input 블록\n\n**Python 문법:**\n```python\nEntry.input(%1)\n```\n\n",
+    "type": "block_reference"
+  },
+  {
+    "id": "block_answer",
+    "title": "answer 블록",
+    "content": "# answer 블록\n\n**Python 문법:**\n```python\nEntry.answer()\n```\n\n",
+    "type": "block_reference"
+  },
+  {
+    "id": "block_answer",
+    "title": "answer 블록",
+    "content": "# answer 블록\n\n**Python 문법:**\n```python\nEntry.answer()\n```\n\n",
+    "type": "block_reference"
+  },
+  {
+    "id": "block_answer_view",
+    "title": "answer_view 블록",
+    "content": "# answer_view 블록\n\n**Python 문법:**\n```python\nEntry.answer_view(%1)\n```\n\n",
+    "type": "block_reference"
+  },
+  {
+    "id": "block_show_variable",
+    "title": "show_variable 블록",
+    "content": "# show_variable 블록\n\n**Python 문법:**\n```python\nEntry.show_variable(%1)\n```\n\n",
+    "type": "block_reference"
+  },
+  {
+    "id": "block_hide_variable",
+    "title": "hide_variable 블록",
+    "content": "# hide_variable 블록\n\n**Python 문법:**\n```python\nEntry.hide_variable(%1)\n```\n\n",
+    "type": "block_reference"
+  },
+  {
+    "id": "block_show_list",
+    "title": "show_list 블록",
+    "content": "# show_list 블록\n\n**Python 문법:**\n```python\nEntry.show_list(%1)\n```\n\n",
+    "type": "block_reference"
+  },
+  {
+    "id": "block_hide_list",
+    "title": "hide_list 블록",
+    "content": "# hide_list 블록\n\n**Python 문법:**\n```python\nEntry.hide_list(%1)\n```\n\n",
+    "type": "block_reference"
+  },
+  {
+    "id": "block_play_sound",
+    "title": "play_sound 블록",
+    "content": "# play_sound 블록\n\n**Python 문법:**\n```python\nEntry.play_sound(%1)\n```\n\n",
+    "type": "block_reference"
+  },
+  {
+    "id": "block_play_sound_for_sec(%1, %2)",
+    "title": "play_sound_for_sec(%1, %2) 블록",
+    "content": "# play_sound_for_sec(%1, %2) 블록\n\n**Python 문법:**\n```python\nEntry.play_sound_for_sec(%1, %2)\n```\n\n",
+    "type": "block_reference"
+  },
+  {
+    "id": "block_play_sound_from_to(%1, %2, %3)",
+    "title": "play_sound_from_to(%1, %2, %3) 블록",
+    "content": "# play_sound_from_to(%1, %2, %3) 블록\n\n**Python 문법:**\n```python\nEntry.play_sound_from_to(%1, %2, %3)\n```\n\n",
+    "type": "block_reference"
+  },
+  {
+    "id": "block_play_sound_and_wait",
+    "title": "play_sound_and_wait 블록",
+    "content": "# play_sound_and_wait 블록\n\n**Python 문법:**\n```python\nEntry.play_sound_and_wait(%1)\n```\n\n",
+    "type": "block_reference"
+  },
+  {
+    "id": "block_play_sound_for_sec_and_wait(%1, %2)",
+    "title": "play_sound_for_sec_and_wait(%1, %2) 블록",
+    "content": "# play_sound_for_sec_and_wait(%1, %2) 블록\n\n**Python 문법:**\n```python\nEntry.play_sound_for_sec_and_wait(%1, %2)\n```\n\n",
+    "type": "block_reference"
+  },
+  {
+    "id": "block_play_sound_from_to_and_wait(%1, %2, %3)",
+    "title": "play_sound_from_to_and_wait(%1, %2, %3) 블록",
+    "content": "# play_sound_from_to_and_wait(%1, %2, %3) 블록\n\n**Python 문법:**\n```python\nEntry.play_sound_from_to_and_wait(%1, %2, %3)\n```\n\n",
+    "type": "block_reference"
+  },
+  {
+    "id": "block_add_sound_volume",
+    "title": "add_sound_volume 블록",
+    "content": "# add_sound_volume 블록\n\n**Python 문법:**\n```python\nEntry.add_sound_volume(%1)\n```\n\n",
+    "type": "block_reference"
+  },
+  {
+    "id": "block_set_sound_volume",
+    "title": "set_sound_volume 블록",
+    "content": "# set_sound_volume 블록\n\n**Python 문법:**\n```python\nEntry.set_sound_volume(%1)\n```\n\n",
+    "type": "block_reference"
+  },
+  {
+    "id": "block_stop_sound",
+    "title": "stop_sound 블록",
+    "content": "# stop_sound 블록\n\n**Python 문법:**\n```python\nEntry.stop_sound()\n```\n\n",
+    "type": "block_reference"
+  },
+  {
+    "id": "block_stop_sound",
+    "title": "stop_sound 블록",
+    "content": "# stop_sound 블록\n\n**Python 문법:**\n```python\nEntry.stop_sound()\n```\n\n",
+    "type": "block_reference"
+  },
+  {
+    "id": "block_stop_sound",
+    "title": "stop_sound 블록",
+    "content": "# stop_sound 블록\n\n**Python 문법:**\n```python\nEntry.stop_sound()\n```\n\n",
+    "type": "block_reference"
+  },
+  {
+    "id": "block_stop_sound",
+    "title": "stop_sound 블록",
+    "content": "# stop_sound 블록\n\n**Python 문법:**\n```python\nEntry.stop_sound()\n```\n\n",
+    "type": "block_reference"
+  },
+  {
+    "id": "block_stop_sound",
+    "title": "stop_sound 블록",
+    "content": "# stop_sound 블록\n\n**Python 문법:**\n```python\nEntry.stop_sound()\n```\n\n",
+    "type": "block_reference"
+  },
+  {
+    "id": "block_stop_sound",
+    "title": "stop_sound 블록",
+    "content": "# stop_sound 블록\n\n**Python 문법:**\n```python\nEntry.stop_sound()\n```\n\n",
+    "type": "block_reference"
+  },
+  {
+    "id": "block_value_of_sound_volume",
+    "title": "value_of_sound_volume 블록",
+    "content": "# value_of_sound_volume 블록\n\n**Python 문법:**\n```python\nEntry.value_of_sound_volume()\n```\n\n",
+    "type": "block_reference"
+  },
+  {
+    "id": "block_value_of_sound_length_of",
+    "title": "value_of_sound_length_of 블록",
+    "content": "# value_of_sound_length_of 블록\n\n**Python 문법:**\n```python\nEntry.value_of_sound_length_of(%2)\n```\n\n",
+    "type": "block_reference"
+  },
+  {
+    "id": "block_wait_for_sec",
+    "title": "wait_for_sec 블록",
+    "content": "# wait_for_sec 블록\n\n**Python 문법:**\n```python\nEntry.wait_for_sec(%1)\n```\n\n",
+    "type": "block_reference"
+  },
+  {
+    "id": "block_wait_until",
+    "title": "wait_until 블록",
+    "content": "# wait_until 블록\n\n**Python 문법:**\n```python\nEntry.wait_until(%1)\n```\n\n",
+    "type": "block_reference"
+  },
+  {
+    "id": "block_stop_code",
+    "title": "stop_code 블록",
+    "content": "# stop_code 블록\n\n**Python 문법:**\n```python\nEntry.stop_code(%1)\n```\n\n",
+    "type": "block_reference"
+  },
+  {
+    "id": "block_start_again",
+    "title": "start_again 블록",
+    "content": "# start_again 블록\n\n**Python 문법:**\n```python\nEntry.start_again()\n```\n\n",
+    "type": "block_reference"
+  },
+  {
+    "id": "block_make_clone_of",
+    "title": "make_clone_of 블록",
+    "content": "# make_clone_of 블록\n\n**Python 문법:**\n```python\nEntry.make_clone_of(%1)\n```\n\n",
+    "type": "block_reference"
+  },
+  {
+    "id": "block_remove_this_clone",
+    "title": "remove_this_clone 블록",
+    "content": "# remove_this_clone 블록\n\n**Python 문법:**\n```python\nEntry.remove_this_clone()\n```\n\n",
+    "type": "block_reference"
+  },
+  {
+    "id": "block_remove_all_clone",
+    "title": "remove_all_clone 블록",
+    "content": "# remove_all_clone 블록\n\n**Python 문법:**\n```python\nEntry.remove_all_clone()\n```\n\n",
+    "type": "block_reference"
   },
   {
     "id": "block_show",
-    "title": "엔트리 파이썬 블록: show",
-    "content": "# show 블록\n\n**카테고리:** visibility\n\n**Python 문법:**\n```python\nEntry.show()\n```\n\n## 사용 예시\n\n```python\nEntry.show()\n```\n\n## 관련 정보\n\n- 이 블록은 visibility 카테고리에 속합니다\n- 원본 파일: block_looks.js\n",
-    "type": "block_reference",
-    "block_id": "show",
-    "category": "visibility",
-    "python_syntax": [
-      "Entry.show()"
-    ],
-    "parameters": []
+    "title": "show 블록",
+    "content": "# show 블록\n\n**Python 문법:**\n```python\nEntry.show()\n```\n\n",
+    "type": "block_reference"
   },
   {
     "id": "block_hide",
-    "title": "엔트리 파이썬 블록: hide",
-    "content": "# hide 블록\n\n**카테고리:** visibility\n\n**Python 문법:**\n```python\nEntry.hide()\n```\n\n## 사용 예시\n\n```python\nEntry.hide()\n```\n\n## 관련 정보\n\n- 이 블록은 visibility 카테고리에 속합니다\n- 원본 파일: block_looks.js\n",
-    "type": "block_reference",
-    "block_id": "hide",
-    "category": "visibility",
-    "python_syntax": [
-      "Entry.hide()"
-    ],
-    "parameters": []
+    "title": "hide 블록",
+    "content": "# hide 블록\n\n**Python 문법:**\n```python\nEntry.hide()\n```\n\n",
+    "type": "block_reference"
   },
   {
-    "id": "block_check_weather",
-    "title": "엔트리 파이썬 블록: check_weather",
-    "content": "# check_weather 블록\n\n**카테고리:** weather_legacy\n\n**Python 문법:**\n```python\nLegacy.Weather.is_condition_sunny(%1, %2)\n```\n\n## 매개변수\n\n- **DATE** (위치 0): 블록의 1번째 입력값\n- **LOCATION** (위치 1): 블록의 2번째 입력값\n\n## 사용 예시\n\n```python\nresult = Legacy.Weather.is_condition_sunny(%1, %2)\nEntry.print(result)\n```\n\n## 관련 정보\n\n- 이 블록은 weather_legacy 카테고리에 속합니다\n- 원본 파일: block_expansion_weather.js\n",
-    "type": "block_reference",
-    "block_id": "check_weather",
-    "category": "weather_legacy",
-    "python_syntax": [
-      "Legacy.Weather.is_condition_sunny(%1, %2)"
-    ],
-    "parameters": [
-      {
-        "name": "DATE",
-        "index": 0
-      },
-      {
-        "name": "LOCATION",
-        "index": 1
-      }
-    ]
+    "id": "block_print_for_sec(%1, %2)",
+    "title": "print_for_sec(%1, %2) 블록",
+    "content": "# print_for_sec(%1, %2) 블록\n\n**Python 문법:**\n```python\nEntry.print_for_sec(%1, %2)\n```\n\n",
+    "type": "block_reference"
   },
   {
-    "id": "entry_python_guide",
-    "title": "엔트리 파이썬 기본 가이드",
-    "content": "# 엔트리 파이썬 기본 가이드\n\n## 개요\n엔트리 파이썬은 블록 코딩을 Python 텍스트 코딩으로 변환하여 사용할 수 있는 기능입니다.\n\n## 기본 구조\n\n### 이벤트 함수\n```python\ndef when_start():\n    # 시작하기 블록의 Python 코드\n    pass\n\ndef when_press_key(key):\n    # 키를 눌렀을 때 블록의 Python 코드\n    pass\n\ndef when_click_mouse_on():\n    # 마우스를 클릭했을 때 블록의 Python 코드\n    pass\n```\n\n### 기본 명령어\n- `Entry.move_to_direction(distance)`: 방향으로 이동\n- `Entry.set_x(x)`: X 좌표 설정\n- `Entry.set_y(y)`: Y 좌표 설정\n- `Entry.show()`: 보이기\n- `Entry.hide()`: 숨기기\n- `Entry.print(text)`: 텍스트 출력\n\n### 조건문과 반복문\n```python\n# 조건문\nif Entry.is_mouse_clicked():\n    Entry.show()\n\n# 반복문\nfor i in range(10):\n    Entry.move_to_direction(10)\n```\n\n## 매개변수 규칙\n- `%1`, `%2`, `%3` 등은 블록의 입력값을 나타냅니다\n- 블록에서 Python으로 변환할 때 실제 값으로 치환됩니다\n\n## 주의사항\n- 모든 Entry 함수는 `Entry.` 접두사를 사용합니다\n- 이벤트 함수는 `def`로 시작하며 특정 이름 규칙을 따릅니다\n- 들여쓰기는 Python 문법을 따라 4칸 공백을 사용합니다\n",
-    "type": "general_guide"
+    "id": "block_print",
+    "title": "print 블록",
+    "content": "# print 블록\n\n**Python 문법:**\n```python\nEntry.print(%1)\n```\n\n",
+    "type": "block_reference"
   },
   {
-    "id": "entry_python_faq",
-    "title": "엔트리 파이썬 자주 묻는 질문",
-    "content": "# 엔트리 파이썬 FAQ\n\n## Q: 블록 코딩과 Python 코딩의 차이점은 무엇인가요?\nA: 블록 코딩은 시각적인 블록을 조합하여 프로그래밍하는 방식이고, Python 코딩은 텍스트로 직접 코드를 작성하는 방식입니다. 엔트리에서는 블록을 Python 코드로 자동 변환할 수 있습니다.\n\n## Q: Entry.move_to_direction()과 같은 함수는 어디서 확인할 수 있나요?\nA: 엔트리 워크스페이스에서 블록을 Python 모드로 전환하면 해당하는 Python 함수를 확인할 수 있습니다.\n\n## Q: 매개변수 %1, %2는 무엇을 의미하나요?\nA: 블록의 입력 필드 순서를 나타냅니다. %1은 첫 번째 입력값, %2는 두 번째 입력값을 의미합니다.\n\n## Q: Python 코드에서 오류가 발생했을 때 어떻게 해결하나요?\nA: \n1. 문법 오류: 들여쓰기, 괄호, 따옴표 등을 확인하세요\n2. 함수 오류: Entry. 접두사가 올바른지 확인하세요\n3. 매개변수 오류: 함수에 필요한 매개변수가 모두 제공되었는지 확인하세요\n\n## Q: 어떤 블록들이 Python으로 변환 가능한가요?\nA: 대부분의 엔트리 블록이 Python으로 변환 가능합니다. 움직임, 생김새, 소리, 판단, 반복, 변수 등 모든 카테고리의 블록을 지원합니다.\n\n## Q: Python 코드를 직접 작성할 때 주의할 점은?\nA: \n- Entry 함수는 반드시 `Entry.` 접두사를 사용하세요\n- 이벤트 함수는 정확한 이름을 사용하세요 (예: `def when_start():`)\n- Python 문법 규칙을 준수하세요 (들여쓰기, 콜론 등)\n",
-    "type": "faq"
+    "id": "block_clear_print",
+    "title": "clear_print 블록",
+    "content": "# clear_print 블록\n\n**Python 문법:**\n```python\nEntry.clear_print()\n```\n\n",
+    "type": "block_reference"
+  },
+  {
+    "id": "block_change_shape",
+    "title": "change_shape 블록",
+    "content": "# change_shape 블록\n\n**Python 문법:**\n```python\nEntry.change_shape(%1)\n```\n\n",
+    "type": "block_reference"
+  },
+  {
+    "id": "block_change_shape_to",
+    "title": "change_shape_to 블록",
+    "content": "# change_shape_to 블록\n\n**Python 문법:**\n```python\nEntry.change_shape_to(%1)\n```\n\n",
+    "type": "block_reference"
+  },
+  {
+    "id": "block_add_effect(%1, %2)",
+    "title": "add_effect(%1, %2) 블록",
+    "content": "# add_effect(%1, %2) 블록\n\n**Python 문법:**\n```python\nEntry.add_effect(%1, %2)\n```\n\n",
+    "type": "block_reference"
+  },
+  {
+    "id": "block_set_effect(%1, %2)",
+    "title": "set_effect(%1, %2) 블록",
+    "content": "# set_effect(%1, %2) 블록\n\n**Python 문법:**\n```python\nEntry.set_effect(%1, %2)\n```\n\n",
+    "type": "block_reference"
+  },
+  {
+    "id": "block_clear_effect",
+    "title": "clear_effect 블록",
+    "content": "# clear_effect 블록\n\n**Python 문법:**\n```python\nEntry.clear_effect()\n```\n\n",
+    "type": "block_reference"
+  },
+  {
+    "id": "block_add_size",
+    "title": "add_size 블록",
+    "content": "# add_size 블록\n\n**Python 문법:**\n```python\nEntry.add_size(%1)\n```\n\n",
+    "type": "block_reference"
+  },
+  {
+    "id": "block_set_size",
+    "title": "set_size 블록",
+    "content": "# set_size 블록\n\n**Python 문법:**\n```python\nEntry.set_size(%1)\n```\n\n",
+    "type": "block_reference"
+  },
+  {
+    "id": "block_flip_horizontal",
+    "title": "flip_horizontal 블록",
+    "content": "# flip_horizontal 블록\n\n**Python 문법:**\n```python\nEntry.flip_horizontal()\n```\n\n",
+    "type": "block_reference"
+  },
+  {
+    "id": "block_flip_vertical",
+    "title": "flip_vertical 블록",
+    "content": "# flip_vertical 블록\n\n**Python 문법:**\n```python\nEntry.flip_vertical()\n```\n\n",
+    "type": "block_reference"
+  },
+  {
+    "id": "block_send_layer_to",
+    "title": "send_layer_to 블록",
+    "content": "# send_layer_to 블록\n\n**Python 문법:**\n```python\nEntry.send_layer_to(%1)\n```\n\n",
+    "type": "block_reference"
+  },
+  {
+    "id": "block_contents_of_textbox",
+    "title": "contents_of_textbox 블록",
+    "content": "# contents_of_textbox 블록\n\n**Python 문법:**\n```python\nEntry.contents_of_textbox(%1)\n```\n\n",
+    "type": "block_reference"
+  },
+  {
+    "id": "block_write_text",
+    "title": "write_text 블록",
+    "content": "# write_text 블록\n\n**Python 문법:**\n```python\nEntry.write_text(%1)\n```\n\n",
+    "type": "block_reference"
+  },
+  {
+    "id": "block_append_text",
+    "title": "append_text 블록",
+    "content": "# append_text 블록\n\n**Python 문법:**\n```python\nEntry.append_text(%1)\n```\n\n",
+    "type": "block_reference"
+  },
+  {
+    "id": "block_prepend_text",
+    "title": "prepend_text 블록",
+    "content": "# prepend_text 블록\n\n**Python 문법:**\n```python\nEntry.prepend_text(%1)\n```\n\n",
+    "type": "block_reference"
+  },
+  {
+    "id": "block_changeTextEffect(\"%1\", \"%2\")",
+    "title": "changeTextEffect(\"%1\", \"%2\") 블록",
+    "content": "# changeTextEffect(\"%1\", \"%2\") 블록\n\n**Python 문법:**\n```python\nEntry.changeTextEffect(\"%1\", \"%2\")\n```\n\n",
+    "type": "block_reference"
+  },
+  {
+    "id": "block_text_change_font(\"%1\")",
+    "title": "text_change_font(\"%1\") 블록",
+    "content": "# text_change_font(\"%1\") 블록\n\n**Python 문법:**\n```python\nEntry.text_change_font(\"%1\")\n```\n\n",
+    "type": "block_reference"
+  },
+  {
+    "id": "block_text_change_font_color(\"%1\")",
+    "title": "text_change_font_color(\"%1\") 블록",
+    "content": "# text_change_font_color(\"%1\") 블록\n\n**Python 문법:**\n```python\nEntry.text_change_font_color(\"%1\")\n```\n\n",
+    "type": "block_reference"
+  },
+  {
+    "id": "block_text_change_bg_color(\"%1\")",
+    "title": "text_change_bg_color(\"%1\") 블록",
+    "content": "# text_change_bg_color(\"%1\") 블록\n\n**Python 문법:**\n```python\nEntry.text_change_bg_color(\"%1\")\n```\n\n",
+    "type": "block_reference"
+  },
+  {
+    "id": "block_clear_text",
+    "title": "clear_text 블록",
+    "content": "# clear_text 블록\n\n**Python 문법:**\n```python\nEntry.clear_text()\n```\n\n",
+    "type": "block_reference"
+  },
+  {
+    "id": "block_stamp",
+    "title": "stamp 블록",
+    "content": "# stamp 블록\n\n**Python 문법:**\n```python\nEntry.stamp()\n```\n\n",
+    "type": "block_reference"
+  },
+  {
+    "id": "block_start_drawing",
+    "title": "start_drawing 블록",
+    "content": "# start_drawing 블록\n\n**Python 문법:**\n```python\nEntry.start_drawing()\n```\n\n",
+    "type": "block_reference"
+  },
+  {
+    "id": "block_stop_drawing",
+    "title": "stop_drawing 블록",
+    "content": "# stop_drawing 블록\n\n**Python 문법:**\n```python\nEntry.stop_drawing()\n```\n\n",
+    "type": "block_reference"
+  },
+  {
+    "id": "block_set_brush_color_to",
+    "title": "set_brush_color_to 블록",
+    "content": "# set_brush_color_to 블록\n\n**Python 문법:**\n```python\nEntry.set_brush_color_to(%1)\n```\n\n",
+    "type": "block_reference"
+  },
+  {
+    "id": "block_set_brush_color_to_random",
+    "title": "set_brush_color_to_random 블록",
+    "content": "# set_brush_color_to_random 블록\n\n**Python 문법:**\n```python\nEntry.set_brush_color_to_random()\n```\n\n",
+    "type": "block_reference"
+  },
+  {
+    "id": "block_add_brush_size",
+    "title": "add_brush_size 블록",
+    "content": "# add_brush_size 블록\n\n**Python 문법:**\n```python\nEntry.add_brush_size(%1)\n```\n\n",
+    "type": "block_reference"
+  },
+  {
+    "id": "block_set_brush_size",
+    "title": "set_brush_size 블록",
+    "content": "# set_brush_size 블록\n\n**Python 문법:**\n```python\nEntry.set_brush_size(%1)\n```\n\n",
+    "type": "block_reference"
+  },
+  {
+    "id": "block_add_brush_transparency",
+    "title": "add_brush_transparency 블록",
+    "content": "# add_brush_transparency 블록\n\n**Python 문법:**\n```python\nEntry.add_brush_transparency(%1)\n```\n\n",
+    "type": "block_reference"
+  },
+  {
+    "id": "block_set_brush_transparency",
+    "title": "set_brush_transparency 블록",
+    "content": "# set_brush_transparency 블록\n\n**Python 문법:**\n```python\nEntry.set_brush_transparency(%1)\n```\n\n",
+    "type": "block_reference"
+  },
+  {
+    "id": "block_clear_drawing",
+    "title": "clear_drawing 블록",
+    "content": "# clear_drawing 블록\n\n**Python 문법:**\n```python\nEntry.clear_drawing()\n```\n\n",
+    "type": "block_reference"
   }
 ]
