@@ -59,3 +59,7 @@ temp/
 
 # EntryJs
 .entryjs/
+
+# cdk
+cdk.out/
+entry_embedding/deploy/cdk/cdk.out/

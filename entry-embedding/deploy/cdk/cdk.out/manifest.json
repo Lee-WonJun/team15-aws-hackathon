@@ -1,0 +1,201 @@
+{
+  "version": "40.0.0",
+  "artifacts": {
+    "EntryRagStack.assets": {
+      "type": "cdk:asset-manifest",
+      "properties": {
+        "file": "EntryRagStack.assets.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+      }
+    },
+    "EntryRagStack": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://339712825274/us-east-1",
+      "properties": {
+        "templateFile": "EntryRagStack.template.json",
+        "terminationProtection": false,
+        "validateOnSynth": false,
+        "assumeRoleArn": "arn:${AWS::Partition}:iam::339712825274:role/cdk-hnb659fds-deploy-role-339712825274-us-east-1",
+        "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::339712825274:role/cdk-hnb659fds-cfn-exec-role-339712825274-us-east-1",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-339712825274-us-east-1/2e94b8c789880c403012254e1a512b5fd697aee231148b718111e3ee8eb2c78c.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
+        "additionalDependencies": [
+          "EntryRagStack.assets"
+        ],
+        "lookupRole": {
+          "arn": "arn:${AWS::Partition}:iam::339712825274:role/cdk-hnb659fds-lookup-role-339712825274-us-east-1",
+          "requiresBootstrapStackVersion": 8,
+          "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+        }
+      },
+      "dependencies": [
+        "EntryRagStack.assets"
+      ],
+      "metadata": {
+        "/EntryRagStack/EntryDocsSourceBucket/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "EntryDocsSourceBucketA972CB21"
+          }
+        ],
+        "/EntryRagStack/EntryDocsSourceBucket/Policy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "EntryDocsSourceBucketPolicy129E2AA5"
+          }
+        ],
+        "/EntryRagStack/EntryDocsSourceBucket/AutoDeleteObjectsCustomResource/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "EntryDocsSourceBucketAutoDeleteObjectsCustomResourceD7DDDB3B"
+          }
+        ],
+        "/EntryRagStack/Custom::S3AutoDeleteObjectsCustomResourceProvider": [
+          {
+            "type": "aws:cdk:is-custom-resource-handler-customResourceProvider",
+            "data": true
+          }
+        ],
+        "/EntryRagStack/Custom::S3AutoDeleteObjectsCustomResourceProvider/Role": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CustomS3AutoDeleteObjectsCustomResourceProviderRole3B1BD092"
+          }
+        ],
+        "/EntryRagStack/Custom::S3AutoDeleteObjectsCustomResourceProvider/Handler": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CustomS3AutoDeleteObjectsCustomResourceProviderHandler9D90184F"
+          }
+        ],
+        "/EntryRagStack/EntryRagCollection": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "EntryRagCollection"
+          }
+        ],
+        "/EntryRagStack/EntryRagEncryptionPolicy": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "EntryRagEncryptionPolicy"
+          }
+        ],
+        "/EntryRagStack/EntryRagNetworkPolicy": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "EntryRagNetworkPolicy"
+          }
+        ],
+        "/EntryRagStack/BedrockKnowledgeBaseRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BedrockKnowledgeBaseRole24C5E17B"
+          }
+        ],
+        "/EntryRagStack/BedrockKnowledgeBaseRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BedrockKnowledgeBaseRoleDefaultPolicy3434A684"
+          }
+        ],
+        "/EntryRagStack/EntryPythonKnowledgeBase": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "EntryPythonKnowledgeBase"
+          }
+        ],
+        "/EntryRagStack/EntryPythonDataSource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "EntryPythonDataSource"
+          }
+        ],
+        "/EntryRagStack/DeployDocs/AwsCliLayer/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DeployDocsAwsCliLayer98E5B499"
+          }
+        ],
+        "/EntryRagStack/DeployDocs/CustomResource/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DeployDocsCustomResourceED24FA89"
+          }
+        ],
+        "/EntryRagStack/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C": [
+          {
+            "type": "aws:cdk:is-custom-resource-handler-singleton",
+            "data": true
+          },
+          {
+            "type": "aws:cdk:is-custom-resource-handler-runtime-family",
+            "data": 2
+          }
+        ],
+        "/EntryRagStack/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756CServiceRole89A01265"
+          }
+        ],
+        "/EntryRagStack/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C/ServiceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756CServiceRoleDefaultPolicy88902FDF"
+          }
+        ],
+        "/EntryRagStack/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C81C01536"
+          }
+        ],
+        "/EntryRagStack/SourceBucketName": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SourceBucketName"
+          }
+        ],
+        "/EntryRagStack/KnowledgeBaseId": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "KnowledgeBaseId"
+          }
+        ],
+        "/EntryRagStack/CollectionEndpoint": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CollectionEndpoint"
+          }
+        ],
+        "/EntryRagStack/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/EntryRagStack/BootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BootstrapVersion"
+          }
+        ],
+        "/EntryRagStack/CheckBootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CheckBootstrapVersion"
+          }
+        ]
+      },
+      "displayName": "EntryRagStack"
+    },
+    "Tree": {
+      "type": "cdk:tree",
+      "properties": {
+        "file": "tree.json"
+      }
+    }
+  }
+}
