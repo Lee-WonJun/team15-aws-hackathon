@@ -9,7 +9,8 @@ st.set_page_config(
 )
 
 # 제목
-st.title("🤖 Amazon Bedrock 챗봇")
+st.title("🤖 엔트리 파이썬 RAG 챗봇")
+st.markdown("**Knowledge Base**: 9R38KN62YH")
 
 # 챗봇 초기화
 @st.cache_resource
@@ -49,5 +50,7 @@ with st.sidebar:
         st.rerun()
     
     st.markdown("---")
-    st.markdown("**모델**: Claude Sonnet 4 🚀 (via Inference Profile)")
+    st.markdown("**모델**: Claude Sonnet 4 🚀")
+    st.markdown("**Knowledge Base**: 9R38KN62YH")
+    st.markdown("**기능**: RAG (검색 증강 생성)")
     st.markdown("**제공**: Amazon Bedrock")
