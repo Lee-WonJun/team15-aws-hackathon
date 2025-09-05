@@ -25,12 +25,12 @@ class SimpleCompleteStack(Stack):
         # OpenSearch Serverless 보안 정책들
         encryption_policy = opensearch.CfnSecurityPolicy(
             self, "EntryRagEncryptionPolicy",
-            name="entry-encrypt-policy",
+            name="entry-encrypt-policy-v2",
             type="encryption",
             policy=json.dumps({
                 "Rules": [{
                     "ResourceType": "collection",
-                    "Resource": ["collection/entry-collection"]
+                    "Resource": ["collection/entry-collection-v2"]
                 }],
                 "AWSOwnedKey": True
             })
@@ -38,15 +38,15 @@ class SimpleCompleteStack(Stack):
 
         network_policy = opensearch.CfnSecurityPolicy(
             self, "EntryRagNetworkPolicy", 
-            name="entry-network-policy",
+            name="entry-network-policy-v2",
             type="network",
             policy=json.dumps([{
                 "Rules": [{
                     "ResourceType": "collection",
-                    "Resource": ["collection/entry-collection"]
+                    "Resource": ["collection/entry-collection-v2"]
                 }, {
                     "ResourceType": "dashboard",
-                    "Resource": ["collection/entry-collection"]
+                    "Resource": ["collection/entry-collection-v2"]
                 }],
                 "AllowFromPublic": True
             }])
@@ -55,16 +55,16 @@ class SimpleCompleteStack(Stack):
         # 데이터 접근 정책
         data_access_policy = opensearch.CfnAccessPolicy(
             self, "EntryRagDataAccessPolicy",
-            name="entry-data-policy",
+            name="entry-data-policy-v2",
             type="data",
             policy=json.dumps([{
                 "Rules": [{
                     "ResourceType": "collection",
-                    "Resource": ["collection/entry-collection"],
+                    "Resource": ["collection/entry-collection-v2"],
                     "Permission": ["aoss:*"]
                 }, {
                     "ResourceType": "index",
-                    "Resource": ["index/entry-collection/*"],
+                    "Resource": ["index/entry-collection-v2/*"],
                     "Permission": ["aoss:*"]
                 }],
                 "Principal": [f"arn:aws:iam::{self.account}:root"]
@@ -74,7 +74,7 @@ class SimpleCompleteStack(Stack):
         # OpenSearch Serverless 컬렉션
         collection = opensearch.CfnCollection(
             self, "EntryRagCollection",
-            name="entry-collection",
+            name="entry-collection-v2",
             type="VECTORSEARCH"
         )
         collection.add_dependency(encryption_policy)

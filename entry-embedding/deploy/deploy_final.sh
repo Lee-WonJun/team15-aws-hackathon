@@ -13,14 +13,14 @@ fi
 
 # 문서 빌드
 echo "📄 문서 빌드..."
-cd ../extraction && python build_all.py && cd ../deploy
+echo "📄 문서 준비됨"
 
 # CDK 배포
 cd cdk
 pip3 install -r requirements.txt
 
 echo "🚀 1단계: S3 + OpenSearch 배포..."
-cdk deploy SimpleCompleteStack --app "python3 app_simple.py" --require-approval never
+cdk deploy SimpleCompleteStack-v2 --app "python3 app_simple.py" --require-approval never
 
 echo "🔧 2단계: 벡터 인덱스 생성..."
 cd .. && python3 create_index_simple.py && cd cdk

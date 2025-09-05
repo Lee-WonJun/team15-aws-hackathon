@@ -7,7 +7,7 @@ from simple_complete_stack import SimpleCompleteStack
 load_dotenv()
 
 app = cdk.App()
-SimpleCompleteStack(app, "SimpleCompleteStack",
+SimpleCompleteStack(app, "SimpleCompleteStack-v2",
     env=cdk.Environment(
         account=os.getenv("AWS_ACCOUNT_ID"),
         region=os.getenv("AWS_REGION", "us-east-1")

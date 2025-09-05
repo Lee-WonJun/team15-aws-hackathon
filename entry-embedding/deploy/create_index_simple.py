@@ -17,7 +17,21 @@ session = boto3.Session(
 aoss_client = session.client('opensearchserverless')
 
 def create_vector_index():
-    collection_endpoint = "https://htnuv49jy3dpgekonzrf.us-east-1.aoss.amazonaws.com"
+    # Get collection endpoint dynamically
+    try:
+        collections = aoss_client.list_collections()
+        collection_endpoint = None
+        for collection in collections['collectionSummaries']:
+            if collection['name'] == 'entry-collection-v2':
+                collection_endpoint = f"https://{collection['id']}.{os.getenv('AWS_REGION', 'us-east-1')}.aoss.amazonaws.com"
+                break
+        
+        if not collection_endpoint:
+            print("❌ Collection not found")
+            return False
+    except Exception as e:
+        print(f"❌ Error getting collection: {e}")
+        return False
     
     # OpenSearch 클라이언트 설정
     from opensearchpy import OpenSearch, RequestsHttpConnection
