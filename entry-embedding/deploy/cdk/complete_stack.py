@@ -5,19 +5,22 @@ from aws_cdk import (
     aws_opensearchserverless as opensearch,
     aws_iam as iam,
     aws_s3_deployment as s3deploy,
-    CfnParameter,
+    aws_lambda as lambda_,
+    aws_logs as logs,
+    custom_resources as cr,
     CfnOutput,
-    RemovalPolicy
+    RemovalPolicy,
+    Duration,
+    CustomResource
 )
 import json
-import os
 from constructs import Construct
 
-class EntryRagStack(Stack):
+class CompleteEntryRagStack(Stack):
     def __init__(self, scope: Construct, construct_id: str, **kwargs) -> None:
         super().__init__(scope, construct_id, **kwargs)
 
-        # S3 버킷 생성
+        # S3 버킷
         source_bucket = s3.Bucket(
             self, "EntryDocsSourceBucket",
             bucket_name=f"entry-python-docs-{self.account}-{self.region}",
@@ -25,14 +28,7 @@ class EntryRagStack(Stack):
             auto_delete_objects=True
         )
 
-        # OpenSearch Serverless 컬렉션
-        collection = opensearch.CfnCollection(
-            self, "EntryRagCollection",
-            name="entry-rag-collection",
-            type="VECTORSEARCH"
-        )
-
-        # OpenSearch Serverless 보안 정책
+        # OpenSearch Serverless 보안 정책들
         encryption_policy = opensearch.CfnSecurityPolicy(
             self, "EntryRagEncryptionPolicy",
             name="entry-rag-encryption-policy",
@@ -62,6 +58,35 @@ class EntryRagStack(Stack):
             }])
         )
 
+        # 데이터 접근 정책
+        data_access_policy = opensearch.CfnAccessPolicy(
+            self, "EntryRagDataAccessPolicy",
+            name="entry-rag-data-access-policy",
+            type="data",
+            policy=json.dumps([{
+                "Rules": [{
+                    "ResourceType": "collection",
+                    "Resource": ["collection/entry-rag-collection"],
+                    "Permission": ["aoss:*"]
+                }, {
+                    "ResourceType": "index",
+                    "Resource": ["index/entry-rag-collection/*"],
+                    "Permission": ["aoss:*"]
+                }],
+                "Principal": [f"arn:aws:iam::{self.account}:root"]
+            }])
+        )
+
+        # OpenSearch Serverless 컬렉션
+        collection = opensearch.CfnCollection(
+            self, "EntryRagCollection",
+            name="entry-rag-collection",
+            type="VECTORSEARCH"
+        )
+        collection.add_dependency(encryption_policy)
+        collection.add_dependency(network_policy)
+        collection.add_dependency(data_access_policy)
+
         # Bedrock 서비스 역할
         bedrock_role = iam.Role(
             self, "BedrockKnowledgeBaseRole",
@@ -72,28 +97,44 @@ class EntryRagStack(Stack):
                         iam.PolicyStatement(
                             actions=[
                                 "bedrock:InvokeModel",
-                                "bedrock:Retrieve",
+                                "bedrock:Retrieve", 
                                 "bedrock:RetrieveAndGenerate"
                             ],
                             resources=["*"]
                         ),
                         iam.PolicyStatement(
-                            actions=[
-                                "aoss:APIAccessAll"
-                            ],
+                            actions=["aoss:*"],
                             resources=[collection.attr_arn]
                         )
                     ]
                 )
             }
         )
-
-        # S3 접근 권한
         source_bucket.grant_read(bedrock_role)
 
-        # 컬렉션 의존성 설정
-        collection.add_dependency(encryption_policy)
-        collection.add_dependency(network_policy)
+        # Lambda 실행 역할
+        lambda_role = iam.Role(
+            self, "KnowledgeBaseLambdaRole",
+            assumed_by=iam.ServicePrincipal("lambda.amazonaws.com"),
+            managed_policies=[
+                iam.ManagedPolicy.from_aws_managed_policy_name("service-role/AWSLambdaBasicExecutionRole")
+            ],
+            inline_policies={
+                "KnowledgeBasePolicy": iam.PolicyDocument(
+                    statements=[
+                        iam.PolicyStatement(
+                            actions=[
+                                "bedrock:*",
+                                "aoss:*",
+                                "s3:GetObject",
+                                "s3:ListBucket"
+                            ],
+                            resources=["*"]
+                        )
+                    ]
+                )
+            }
+        )
 
         # Knowledge Base 생성
         knowledge_base = bedrock.CfnKnowledgeBase(
@@ -120,7 +161,14 @@ class EntryRagStack(Stack):
             )
         )
 
-        # Data Source 생성 (고급 파싱 옵션 포함)
+        # 문서 업로드
+        s3deploy.BucketDeployment(
+            self, "DeployDocs",
+            sources=[s3deploy.Source.asset("../docs")],
+            destination_bucket=source_bucket
+        )
+
+        # Data Source 생성
         data_source = bedrock.CfnDataSource(
             self, "EntryPythonDataSource",
             knowledge_base_id=knowledge_base.attr_knowledge_base_id,
@@ -155,14 +203,79 @@ class EntryRagStack(Stack):
             )
         )
 
-        # 마크다운 문서 자동 업로드
-        s3deploy.BucketDeployment(
-            self, "DeployDocs",
-            sources=[s3deploy.Source.asset("../docs")],
-            destination_bucket=source_bucket
+        # 자동 동기화 Lambda
+        sync_lambda = lambda_.Function(
+            self, "KnowledgeBaseSyncLambda",
+            runtime=lambda_.Runtime.PYTHON_3_11,
+            handler="index.handler",
+            role=lambda_role,
+            timeout=Duration.minutes(15),
+            code=lambda_.Code.from_inline("""
+import boto3
+import json
+import time
+
+def handler(event, context):
+    bedrock = boto3.client('bedrock-agent')
+    
+    kb_id = event['ResourceProperties']['KnowledgeBaseId']
+    ds_id = event['ResourceProperties']['DataSourceId']
+    
+    if event['RequestType'] == 'Create' or event['RequestType'] == 'Update':
+        try:
+            # 동기화 시작
+            response = bedrock.start_ingestion_job(
+                knowledgeBaseId=kb_id,
+                dataSourceId=ds_id
+            )
+            
+            job_id = response['ingestionJob']['ingestionJobId']
+            
+            # 완료 대기
+            while True:
+                job_status = bedrock.get_ingestion_job(
+                    knowledgeBaseId=kb_id,
+                    dataSourceId=ds_id,
+                    ingestionJobId=job_id
+                )
+                
+                status = job_status['ingestionJob']['status']
+                if status in ['COMPLETE', 'FAILED']:
+                    break
+                    
+                time.sleep(30)
+            
+            return {
+                'Status': 'SUCCESS',
+                'PhysicalResourceId': job_id,
+                'Data': {'JobId': job_id, 'Status': status}
+            }
+            
+        except Exception as e:
+            return {
+                'Status': 'FAILED',
+                'Reason': str(e),
+                'PhysicalResourceId': 'failed'
+            }
+    
+    return {'Status': 'SUCCESS', 'PhysicalResourceId': 'deleted'}
+"""),
+            log_retention=logs.RetentionDays.ONE_WEEK
         )
+
+        # 커스텀 리소스로 자동 동기화 실행
+        sync_cr = CustomResource(
+            self, "KnowledgeBaseSyncCustomResource",
+            service_token=sync_lambda.function_arn,
+            properties={
+                "KnowledgeBaseId": knowledge_base.attr_knowledge_base_id,
+                "DataSourceId": data_source.attr_data_source_id
+            }
+        )
+        sync_cr.node.add_dependency(data_source)
 
         # 출력
         CfnOutput(self, "SourceBucketName", value=source_bucket.bucket_name)
         CfnOutput(self, "KnowledgeBaseId", value=knowledge_base.attr_knowledge_base_id)
         CfnOutput(self, "CollectionEndpoint", value=collection.attr_collection_endpoint)
+        CfnOutput(self, "DataSourceId", value=data_source.attr_data_source_id)

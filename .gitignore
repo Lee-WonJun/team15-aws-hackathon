@@ -22,9 +22,11 @@ wheels/
 
 # Virtual environments
 venv/
+venv311/
 env/
 ENV/
 .venv/
+.venv311/
 
 # IDE
 .vscode/
@@ -63,3 +65,4 @@ temp/
 # cdk
 cdk.out/
 entry_embedding/deploy/cdk/cdk.out/
+

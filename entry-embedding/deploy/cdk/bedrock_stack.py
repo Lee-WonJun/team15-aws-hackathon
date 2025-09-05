@@ -3,10 +3,12 @@ from aws_cdk import (
     aws_bedrock as bedrock,
     aws_iam as iam,
     aws_lambda as lambda_,
+    aws_logs as logs,
     CfnOutput,
     Duration,
     CustomResource
 )
+import json
 from constructs import Construct
 
 class BedrockStack(Stack):

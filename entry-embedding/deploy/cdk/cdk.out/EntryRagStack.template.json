@@ -325,7 +325,7 @@
        "TextField": "text",
        "VectorField": "vector"
       },
-      "VectorIndexName": "entry-python-index"
+      "VectorIndexName": "bedrock-knowledge-base-default-index"
      },
      "Type": "OPENSEARCH_SERVERLESS"
     }
@@ -568,7 +568,7 @@
   "CDKMetadata": {
    "Type": "AWS::CDK::Metadata",
    "Properties": {
-    "Analytics": "v2:deflate64:H4sIAAAAAAAA/1WPzW7CMBCEn6V340Jz4QpBvbRSEZF6jRZnCW4cG3nXRFHkd6/s0KCeZr0/M5/f5GZbyPULDLRSTbcy+iynikF1AgaqJyrktA+qQxblxT6qWY7OaDU+24/3/NgDYRTuhpYQvLoS+jt6g0RyKi+2dMagYu1suq9QBa95nB2i0NDL6eQMpmHWZ9bfzhkb71SX3T6sGww2LabUtHQAhsoFrzAKKuqpwZtxY4+W5Yx3WBoCiJBJ7pJEYaA/N5BdP2FE/42eEmWlbWuQnX0PduZeivKyNGMUZSB2/Qkpx+cPLPW/0dG7u27QZ+acXjG02rZiOZhhapNAahhIGS13A5VGZ7Zk/hX4FjiK48hXZ18LuZWb9csPab3ywbLuUZ5m/QV4uHJL6gEAAA=="
+    "Analytics": "v2:deflate64:H4sIAAAAAAAA/1WPzU7DMBCEn4W7awi5cG1TcQGJqpG4Rltnm5o4duVdN4oivzuyU1JxmvX+zHx+lcVbKV+eYKSNavuN0Sc51wyqFzBSM1Mp511QPbKozvZeLXJwRqvp0b6/l8cOCKNwV7SE4NWF0N/QGySSc3W2lTMGFWtn032NKnjN0+IQhYZBzkdnMA2zPrL+dk7Yeqf67PZh3Wiw7TClpqU9MNQueIVRUNnMLV6Nmwa0LBe8/doQQIRMcpskCgPDqYXs+gkT+m/0lChrbTuD7Ox7sAv3WlTntRmjqAKxG45IOT5/YK3/jQ7e3XSLPjPn9Jqh07YT68EC05gE0sBIymi5HakyOrMl86/A18BRHCa+OPtcyqKQRfn0Q1pvfLCsB5THRX8BALvqA+sBAAA="
    },
    "Metadata": {
     "aws:cdk:path": "EntryRagStack/CDKMetadata/Default"

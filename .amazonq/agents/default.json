@@ -1,0 +1,19 @@
+{
+  "name": "default-agent",
+  "version": "1.0.0",
+  "description": "Agent configuration",
+  "mcpServers": {
+    "entry-code": {
+      "url": "http://localhost:8000/mcp/sse",
+      "disabled": false,
+      "timeout": 60000
+    }
+  },
+  "tools": [
+    "@entry-code"
+  ],
+  "allowedTools": [],
+  "toolsSettings": {},
+  "includedFiles": [],
+  "resources": []
+}
