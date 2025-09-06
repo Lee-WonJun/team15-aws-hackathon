@@ -38,8 +38,13 @@
 
 ## 동영상 데모
 
-<!-- 데모 GIF 또는 동영상 링크 추가 예정 -->
-*데모 영상은 발표 시 제공됩니다*
+### 챗봇
+https://github.com/user-attachments/assets/04d6c4ca-6e7c-4857-ab67-83168dc20e3d
+
+### MCP with Studio
+https://github.com/user-attachments/assets/ef28c2cd-c1b8-42e0-ab2d-6d2168cfcb9e
+
+
 
 ## 리소스 배포하기
 
