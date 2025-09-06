@@ -71,6 +71,10 @@ https://github.com/user-attachments/assets/ef28c2cd-c1b8-42e0-ab2d-6d2168cfcb9e
 
 ### 배포 단계
 
+- cloud 배포가 필요한 서비스들은 각 프로젝트 내에 cdk 배포/삭제가 구성되어 있습니다.
+    - 챗봇 : http://3.235.42.232:8000/
+    - mcp : http://44.204.113.69:8000/ 
+
 #### 1. 챗봇 서비스 배포
 ```bash
 # Streamlit 챗봇 배포
