@@ -8,7 +8,7 @@ class BedrockChatbot:
     def __init__(self):
         self.bedrock_client = get_bedrock_client()
         self.agent_runtime_client = get_bedrock_agent_runtime_client()
-        self.knowledge_base_id = "entry-python-docs"
+        self.knowledge_base_id = "9R38KN62YH"
         self.model_id = "us.anthropic.claude-sonnet-4-20250514-v1:0"
     
     def retrieve_from_kb(self, query, max_results=5):
